@@ -1,0 +1,5 @@
+commit bd7218736b2a779d071e19316242f84af348a528
+Author: Anisa Marsyahila <2313020259_AnisaMarsyahila@mhs.univ.ac.id>
+Date:   Wed Mar 25 13:16:09 2026 +0700
+
+    Catatan: Menentukan peran dalam tim
