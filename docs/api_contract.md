@@ -13,3 +13,27 @@
   "avatar_url": "https://image.com/avatar.png"
 }
 ```
+
+## Endpoint Login
+
+**Endpoint:** `/api/v1/login`  
+**Method:** `POST`
+
+**Request Body (JSON):**
+
+```json
+{
+  "email": "mhs@univ.ac.id",
+  "password": "password123"
+}
+```
+
+**Response Body (JSON):**
+
+```json
+{
+  "success": true,
+  "message": "Login berhasil",
+  "token": "jwt_token_example"
+}
+```
