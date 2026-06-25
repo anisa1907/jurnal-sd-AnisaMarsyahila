@@ -1,3 +1,8 @@
+import os
+
+user_name = os.getenv("APP_USER", "Guest")
+app_env = os.getenv("APP_ENV", "development")
+
 from controllers.api_handler import get_users
 from views.dashboard_component import (
     render_dashboard,
@@ -18,6 +23,10 @@ def update_state(new_data):
 
 
 if __name__ == "__main__":
+
+    print(f"Halo {user_name}!")
+    print(f"Environment: {app_env}")
+    print("Aplikasi ini berjalan di dalam kontainer Docker.\n")
 
     print("=== DATA SEDANG DIMUAT ===")
 
