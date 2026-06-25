@@ -1,19 +1,18 @@
-from views.dashboard_component import show_dashboard
+from views.dashboard_component import render_dashboard
 
-state = {
-    "user": "Admin",
-    "score": 0
-}
+# Simulasi State
+app_state = {"items": [], "is_loading": True}
 
-
-def tambah_score():
-    state["score"] += 10
-
-
-print("State awal:")
-show_dashboard(state["user"], state["score"])
-
-tambah_score()
-
-print("\nState setelah update:")
-show_dashboard(state["user"], state["score"])
+def update_state(new_data):
+    app_state["items"] = new_data
+    app_state["is_loading"] = False
+    
+if __name__ == "__main__":
+    print("Loading data...")
+    
+    # Simulasi data masuk dari "Backend"
+    mock_data = [
+        {"id": 101, "name": "Produk A"},
+        {"id": 102, "name": "Produk B"}]
+    update_state(mock_data)
+    render_dashboard(app_state["items"])
