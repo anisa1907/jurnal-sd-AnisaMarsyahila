@@ -1,4 +1,8 @@
-from views.dashboard_component import render_dashboard
+from controllers.api_handler import get_users
+from views.dashboard_component import (
+    render_dashboard,
+    fetch_data_from_api
+)
 
 
 # Simulasi State
@@ -15,7 +19,7 @@ def update_state(new_data):
 
 if __name__ == "__main__":
 
-    # Kondisi loading
+    # Tampilkan loading terlebih dahulu
     print("=== DATA SEDANG DIMUAT ===")
     render_dashboard(
         app_state["items"],
@@ -24,15 +28,13 @@ if __name__ == "__main__":
 
     print("\nLoading data...\n")
 
-    # Simulasi data masuk dari Backend
-    mock_data = [
-        {"id": 101, "name": "Produk A"},
-        {"id": 102, "name": "Produk B"}
-    ]
+    # Ambil data dari controller (simulasi API)
+    data = fetch_data_from_api(get_users)
 
-    update_state(mock_data)
+    if data:
+        update_state(data)
 
-    # Kondisi setelah loading selesai
+    # Tampilkan data setelah berhasil diambil
     print("=== DATA BERHASIL DIMUAT ===")
     render_dashboard(
         app_state["items"],
