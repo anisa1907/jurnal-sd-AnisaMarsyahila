@@ -19,8 +19,8 @@ def update_state(new_data):
 
 if __name__ == "__main__":
 
-    # Tampilkan loading terlebih dahulu
     print("=== DATA SEDANG DIMUAT ===")
+
     render_dashboard(
         app_state["items"],
         app_state["is_loading"]
@@ -28,15 +28,17 @@ if __name__ == "__main__":
 
     print("\nLoading data...\n")
 
-    # Ambil data dari controller (simulasi API)
     data = fetch_data_from_api(get_users)
 
     if data:
         update_state(data)
 
-    # Tampilkan data setelah berhasil diambil
-    print("=== DATA BERHASIL DIMUAT ===")
-    render_dashboard(
-        app_state["items"],
-        app_state["is_loading"]
-    )
+        print("\n=== DATA BERHASIL DIMUAT ===")
+
+        render_dashboard(
+            app_state["items"],
+            app_state["is_loading"]
+        )
+
+    else:
+        print("\n=== DATA GAGAL DIMUAT ===")
