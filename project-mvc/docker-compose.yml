@@ -7,6 +7,7 @@ services:
       - APP_USER=${USER_NAME}
     volumes:
       - ./logs:/app/logs
+      - shared-storage:/app/data
     networks:
       - mvc-network
 
@@ -21,6 +22,7 @@ services:
 
 volumes:
   db-data:
+  shared-storage:
 
 networks:
   mvc-network:

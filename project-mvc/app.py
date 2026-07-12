@@ -26,6 +26,7 @@ if __name__ == "__main__":
 
     print(f"Halo {user_name}!")
     print(f"Environment: {app_env}")
+    print("=== VERSI 2.0 - STABIL ===")
     print("Aplikasi ini berjalan di dalam kontainer Docker.\n")
 
     print("=== DATA SEDANG DIMUAT ===")
